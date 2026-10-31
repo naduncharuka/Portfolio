@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nadun Charuka Perera | Engineering Technology Undergraduate</title>
+    <meta
+      name="description"
+      content="Portfolio of Nadun Charuka Perera, Engineering Technology undergraduate at the Faculty of Technology, Wayamba University of Sri Lanka. Construction technology, electronics, robotics and embedded systems."
+    />
+    <meta name="theme-color" content="#0a1930" />
+
+    <!-- Fonts and icons (Google Fonts + Font Awesome via CDN) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Apply saved theme before paint to avoid a flash -->
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+  </head>
+
+  <body>
+    <!--
+    HOW TO EDIT THIS SITE
+    - Anything written like [Add ...] is a placeholder. Replace it with your real details.
+    - Links with href="#" and class="placeholder-link" show a "not added yet" message until you set a real URL.
+    - Search for "EDIT:" in this file to find the main spots to update.
+  -->
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-inner">
+        <a href="#home" class="brand" aria-label="Go to top">
+          <span class="brand-mark">NP</span>
+          <span class="brand-name">Nadun Perera</span>
+        </a>
+
+        <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
+          <ul>
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About Me</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li>
+              <a href="#certifications" class="nav-link">Certifications</a>
+            </li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#leadership" class="nav-link">Leadership</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button
+            id="theme-toggle"
+            class="icon-btn"
+            aria-label="Toggle light and dark theme"
+            title="Toggle theme"
+          >
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+          <button
+            id="menu-toggle"
+            class="icon-btn menu-btn"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===================== HOME / HERO ===================== -->
+      <section id="home" class="hero">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <div class="hero-text reveal">
+            <p class="eyebrow">
+              <span class="dot"></span> Open to internships &amp; industrial
+              training
+            </p>
+            <h1>Nadun Charuka Perera</h1>
+            <h2 class="hero-title">
+              Engineering Technology Undergraduate
+              <span class="sep">|</span> Aspiring Engineer
+            </h2>
+            <p class="hero-sub">
+              Wayamba University of Sri Lanka &middot; Faculty of Technology
+            </p>
+            <p class="hero-tags">
+              Engineering <span>/</span> Construction Technology
+              <span>/</span> Electronics <span>/</span> Robotics
+            </p>
+            <p class="hero-lead">
+              Exploring engineering through technology, creativity and practical
+              innovation.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary"
+                ><i class="fa-solid fa-diagram-project"></i> View Projects</a
+              >
+              <!-- EDIT: put your CV at assets/cv.pdf -->
+              <a
+                href="assets/cv.pdf"
+                class="btn btn-outline"
+                id="cv-btn"
+                download="Nadun-Charuka-Perera-CV.pdf"
+                ><i class="fa-solid fa-download"></i> Download CV</a
+              >
+              <a href="#contact" class="btn btn-ghost"
+                ><i class="fa-solid fa-envelope"></i> Contact Me</a
+              >
+            </div>
+
+            <div class="social-row">
+              <!-- EDIT: replace href="#" with your real URLs -->
+              <a
+                href="https://www.linkedin.com/in/nadun-charuka/"
+                class="social placeholder-link"
+                data-label="LinkedIn"
+                target="_blank"
+                aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://github.com/naduncharuka/"
+                class="social placeholder-link"
+                data-label="GitHub"
+                target="_blank"
+                aria-label="GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a
+                href="https://learn.microsoft.com/users/NadunCharuka/"
+                class="social"
+                target="_blank"
+                rel="noopener"
+                aria-label="Microsoft Learn profile"
+                ><i class="fa-brands fa-microsoft"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="photo-frame">
+              <!-- EDIT: add your photo at images/profile.jpg. If missing, initials are shown. -->
+              <img
+                src="images/profile.jpg"
+                alt="Portrait of Nadun Charuka Perera"
+                id="profile-img"
+              />
+              <div
+                class="photo-fallback"
+                id="photo-fallback"
+                aria-hidden="true"
+              >
+                NP
+              </div>
+            </div>
+            <div class="float-chip chip-1">
+              <i class="fa-solid fa-microchip"></i> Embedded
+            </div>
+            <div class="float-chip chip-2">
+              <i class="fa-solid fa-robot"></i> Robotics
+            </div>
+            <div class="float-chip chip-3">
+              <i class="fa-solid fa-helmet-safety"></i> Construction Tech
+            </div>
+          </div>
+        </div>
+        <a href="#about" class="scroll-hint" aria-label="Scroll to About"
+          ><i class="fa-solid fa-chevron-down"></i
+        ></a>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">01</span>
+            <h2>About Me</h2>
+            <p class="section-sub">Who I am and what I am working towards</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-text reveal">
+              <p>
+                I am an Engineering Technology undergraduate at the Faculty of
+                Technology, Wayamba University of Sri Lanka.
+              </p>
+              <p>
+                I have a strong interest in engineering, construction
+                technology, electronics, robotics, and emerging technologies. I
+                enjoy exploring how technology can solve practical problems and
+                improve everyday life.
+              </p>
+              <p>
+                My interests include construction and the built environment,
+                computer-aided design (CAD), embedded systems, microcontrollers,
+                automation, and hands-on engineering projects.
+              </p>
+              <p>
+                I have practical experience in a professional working
+                environment, where I developed communication, organisation,
+                teamwork, and problem-solving skills.
+              </p>
+              <p>
+                I am continuously developing my technical knowledge through
+                university studies, personal projects, online learning
+                platforms, and independent experimentation.
+              </p>
+              <p>
+                My goal is to become a capable engineering professional who can
+                combine engineering knowledge, creativity, and modern technology
+                to develop practical and sustainable solutions.
+              </p>
+            </div>
+
+            <aside class="about-card reveal">
+              <h3>Quick Facts</h3>
+              <ul class="facts">
+                <li>
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <div><span>Degree</span>B.Eng. Technology (Honours)</div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-building-columns"></i>
+                  <div>
+                    <span>Department</span>Construction &amp; Environmental
+                    Management Technology
+                  </div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <div><span>Location</span>Colombo, Sri Lanka</div>
+                </li>
+                <li>
+                  <i class="fa-solid fa-bullseye"></i>
+                  <div>
+                    <span>Seeking</span>Internships, industrial training,
+                    graduate opportunities
+                  </div>
+                </li>
+              </ul>
+
+              <h3 class="mt">Interests</h3>
+              <div class="chips">
+                <span class="chip">Construction Technology</span>
+                <span class="chip">Robotics &amp; Automation</span>
+                <span class="chip">Electronics</span>
+                <span class="chip">Embedded Systems</span>
+                <span class="chip">AutoCAD / CAD</span>
+                <span class="chip">Linux &amp; Open Source</span>
+                <span class="chip">Cloud &amp; Self-Hosting</span>
+                <span class="chip">Problem-Solving</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EDUCATION ===================== -->
+      <section id="education" class="section alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">02</span>
+            <h2>Education</h2>
+            <p class="section-sub">Academic background</p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item reveal">
+              <div class="timeline-marker">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="timeline-card">
+                <span class="badge badge-live">Currently Undergraduate</span>
+                <h3>Bachelor of Engineering Technology (Honours)</h3>
+                <p class="tl-org">
+                  Wayamba University of Sri Lanka &middot; Faculty of Technology
+                </p>
+                <p class="tl-meta">
+                  <i class="fa-regular fa-calendar"></i>
+                  <span class="editable"
+                    >[Add starting year &ndash; expected graduation year]</span
+                  >
+                </p>
+                <p class="tl-meta">
+                  <i class="fa-solid fa-location-dot"></i> Sri Lanka
+                </p>
+                <p>
+                  Department of Construction and Environmental Management
+                  Technology (CEMT).
+                </p>
+                <p class="note">
+                  <i class="fa-solid fa-circle-info"></i> Final specialisation
+                  will be added once confirmed.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal">
+              <div class="timeline-marker">
+                <i class="fa-solid fa-school"></i>
+              </div>
+              <div class="timeline-card">
+                <h3>School Education</h3>
+                <p class="tl-org">Lumbini College</p>
+                <p class="tl-meta">
+                  <i class="fa-solid fa-location-dot"></i> Colombo, Sri Lanka
+                </p>
+                <p class="tl-meta">
+                  <i class="fa-solid fa-scroll"></i>
+                  <span class="editable"
+                    >[Add GCE O/L, GCE A/L and other qualifications when
+                    available]</span
+                  >
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item reveal">
+              <div class="timeline-marker">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div class="timeline-card">
+                <h3>Additional Learning</h3>
+                <p class="tl-org">Microsoft Learn &middot; Online</p>
+                <p>
+                  Self-directed learning in Git and cloud computing concepts.
+                  See the Certifications section for completed modules.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CERTIFICATIONS ===================== -->
+      <section id="certifications" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">03</span>
+            <h2>Certifications &amp; Achievements</h2>
+            <p class="section-sub">Verified learning achievements</p>
+          </div>
+
+          <div class="cert-grid">
+            <!-- Certificate card. EDIT: add an image to images/certificates/ and change the img src to show it. -->
+            <article class="cert-card reveal">
+              <div class="cert-image">
+                <img
+                  src="images/certificates/intro-to-git.jpg"
+                  alt="Introduction to Git certificate"
+                  class="cert-img"
+                />
+                <div class="cert-fallback">
+                  <i class="fa-brands fa-git-alt"></i
+                  ><span>Certificate image to be added</span>
+                </div>
+              </div>
+              <div class="cert-body">
+                <h3>Introduction to Git</h3>
+                <p class="cert-org">
+                  <i class="fa-brands fa-microsoft"></i> Microsoft Learn
+                </p>
+                <p class="cert-date">
+                  <i class="fa-regular fa-calendar-check"></i> 24 October 2026
+                </p>
+              </div>
+            </article>
+
+            <article class="cert-card reveal">
+              <div class="cert-image">
+                <img
+                  src="images/certificates/cloud-service-types.jpg"
+                  alt="Describe cloud service types certificate"
+                  class="cert-img"
+                />
+                <div class="cert-fallback">
+                  <i class="fa-solid fa-cloud"></i
+                  ><span>Certificate image to be added</span>
+                </div>
+              </div>
+              <div class="cert-body">
+                <h3>Describe cloud service types</h3>
+                <p class="cert-org">
+                  <i class="fa-brands fa-microsoft"></i> Microsoft Learn
+                </p>
+                <p class="cert-date">
+                  <i class="fa-regular fa-calendar-check"></i> 24 October 2026
+                </p>
+              </div>
+            </article>
+
+            <!-- Placeholder card for future additions -->
+            <article class="cert-card cert-empty reveal">
+              <div class="cert-empty-inner">
+                <i class="fa-solid fa-plus"></i>
+                <h3>More to come</h3>
+                <p>
+                  AutoCAD, programming and engineering certifications will be
+                  added once confirmed.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p class="center reveal">
+            <a
+              href="https://learn.microsoft.com/users/NadunCharuka/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+              ><i class="fa-brands fa-microsoft"></i> View Microsoft Learn
+              Profile</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+      <section id="skills" class="section alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">04</span>
+            <h2>Technical Skills</h2>
+            <p class="section-sub">
+              Learning and working areas, grouped by field
+            </p>
+          </div>
+
+          <!-- Category tabs (handled in script.js) -->
+          <div
+            class="skill-tabs reveal"
+            role="tablist"
+            aria-label="Skill categories"
+          >
+            <button class="tab active" role="tab" data-filter="all">All</button>
+            <button class="tab" role="tab" data-filter="electronics">
+              Electronics &amp; Embedded
+            </button>
+            <button class="tab" role="tab" data-filter="engineering">
+              Engineering &amp; Design
+            </button>
+            <button class="tab" role="tab" data-filter="programming">
+              Programming
+            </button>
+            <button class="tab" role="tab" data-filter="cloud">
+              OS &amp; Cloud
+            </button>
+            <button class="tab" role="tab" data-filter="tools">Tools</button>
+          </div>
+
+          <div class="skill-groups">
+            <!-- Electronics and Embedded Systems -->
+            <div class="skill-group reveal" data-cat="electronics">
+              <h3>
+                <i class="fa-solid fa-microchip"></i> Electronics &amp; Embedded
+                Systems
+              </h3>
+              <div class="chips">
+                <span class="skill">Arduino</span>
+                <span class="skill">ESP32</span>
+                <span class="skill">Microcontrollers</span>
+                <span class="skill">Electronic prototyping</span>
+                <span class="skill">Ultrasonic sensors</span>
+                <span class="skill">Servo motors</span>
+                <span class="skill">Basic robotics systems</span>
+              </div>
+            </div>
+
+            <!-- Engineering and Design -->
+            <div class="skill-group reveal" data-cat="engineering">
+              <h3>
+                <i class="fa-solid fa-compass-drafting"></i> Engineering &amp;
+                Design
+              </h3>
+              <div class="chips">
+                <span class="skill"
+                  >Construction Technology <em>Academic field</em></span
+                >
+                <span class="skill">AutoCAD <em>Learning interest</em></span>
+                <span class="skill"
+                  >Engineering drawing <em>Academic interest</em></span
+                >
+                <span class="skill">Computer-aided design</span>
+                <span class="skill">Technical problem-solving</span>
+              </div>
+            </div>
+
+            <!-- Programming -->
+            <div class="skill-group reveal" data-cat="programming">
+              <h3>
+                <i class="fa-solid fa-code"></i> Programming &amp; Development
+              </h3>
+              <div class="chips">
+                <span class="skill">C Programming <em>Beginner</em></span>
+                <span class="skill">HTML <em>Basic</em></span>
+                <span class="skill">CSS <em>Basic</em></span>
+                <span class="skill">JavaScript <em>Basic / Learning</em></span>
+              </div>
+            </div>
+
+            <!-- Operating systems and cloud -->
+            <div class="skill-group reveal" data-cat="cloud">
+              <h3>
+                <i class="fa-solid fa-cloud"></i> Operating Systems &amp; Cloud
+              </h3>
+              <div class="chips">
+                <span class="skill">Ubuntu Linux</span>
+                <span class="skill">Windows</span>
+                <span class="skill">Oracle Cloud Infrastructure</span>
+                <span class="skill">Docker</span>
+                <span class="skill">Tailscale</span>
+                <span class="skill">Self-hosted services</span>
+                <span class="skill">Basic cloud computing concepts</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-group reveal" data-cat="tools">
+              <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
+              <div class="chips">
+                <span class="skill">Git</span>
+                <span class="skill">GitHub</span>
+                <span class="skill">Microsoft Learn</span>
+                <span class="skill">Visual Studio Code</span>
+                <span class="skill">Linux Terminal</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="fine-print reveal">
+            <i class="fa-solid fa-circle-info"></i> These are areas I am
+            learning and working in, not claims of professional proficiency in
+            every tool.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">05</span>
+            <h2>Projects</h2>
+            <p class="section-sub">
+              Engineering and technology work, with honest status labels
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <!-- ---------- Project 1 ---------- -->
+            <article class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <i class="fa-solid fa-person-walking-with-cane"></i>
+                </div>
+                <span class="badge badge-dev"
+                  >Development &middot; Group Project</span
+                >
+              </div>
+              <h3>ESP32-Based Smart White Cane with Speech-to-Braille</h3>
+              <p>
+                A group engineering project developing an assistive technology
+                solution for visually impaired individuals. The proposed system
+                uses an ESP32 microcontroller and a speech-processing system to
+                convert speech into Braille output.
+              </p>
+              <p>
+                The Braille display uses a six-dot mechanism that raises and
+                lowers individual dots to represent characters, aiming to
+                display one word at a time. The objective is to improve
+                accessibility and communication through an affordable electronic
+                solution.
+              </p>
+              <div class="chips small">
+                <span class="tech">ESP32</span
+                ><span class="tech">Embedded Systems</span
+                ><span class="tech">Electronics</span
+                ><span class="tech">Speech Processing</span
+                ><span class="tech">Braille Display</span
+                ><span class="tech">Mechanical Design</span>
+              </div>
+              <div class="project-links">
+                <!-- EDIT: add real URLs -->
+                <a
+                  href="#"
+                  class="btn btn-small btn-outline placeholder-link"
+                  data-label="GitHub repository"
+                  ><i class="fa-brands fa-github"></i> GitHub</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-small btn-ghost placeholder-link"
+                  data-label="Live demo"
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                  Demo</a
+                >
+              </div>
+            </article>
+
+            <!-- ---------- Project 2 ---------- -->
+            <article class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <span class="badge badge-dev">Design &amp; Development</span>
+              </div>
+              <h3>Multi-Functional Autonomous Robotic Car</h3>
+              <p>
+                A smart robotic vehicle designed to combine autonomous
+                navigation, sensor-based decision-making, and robotic
+                manipulation in one platform.
+              </p>
+              <ul class="feature-list">
+                <li>Line-following functionality</li>
+                <li>Obstacle detection and avoidance</li>
+                <li>
+                  Three front ultrasonic sensors plus one on a servo motor
+                </li>
+                <li>
+                  Fixed left and right ultrasonic sensors, and rear obstacle
+                  detection
+                </li>
+                <li>Colour-based path selection at junctions</li>
+                <li>Robotic arm for picking up and moving objects</li>
+              </ul>
+              <div class="chips small">
+                <span class="tech">Arduino / ESP32</span
+                ><span class="tech">Ultrasonic Sensors</span
+                ><span class="tech">Servo Motors</span
+                ><span class="tech">Motor Drivers</span
+                ><span class="tech">IR Sensors</span
+                ><span class="tech">Colour Sensors</span
+                ><span class="tech">Robotics</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="btn btn-small btn-outline placeholder-link"
+                  data-label="GitHub repository"
+                  ><i class="fa-brands fa-github"></i> GitHub</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-small btn-ghost placeholder-link"
+                  data-label="Simulation link"
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Simulation</a
+                >
+              </div>
+            </article>
+
+            <!-- ---------- Project 3 ---------- -->
+            <article class="project-card reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <i class="fa-solid fa-server"></i>
+                </div>
+                <span class="badge badge-live">Ongoing Personal Project</span>
+              </div>
+              <h3>Personal Cloud Infrastructure &amp; Self-Hosted Services</h3>
+              <p>
+                Configuration and management of Linux-based cloud servers,
+                hosting personal services on Oracle Cloud Infrastructure and
+                Ubuntu Linux to build practical knowledge of administration,
+                networking and server management.
+              </p>
+              <p class="mini-title">Planned and explored services</p>
+              <ul class="feature-list">
+                <li>Pi-hole DNS ad blocking with Unbound resolver</li>
+                <li>Tailscale private networking</li>
+                <li>Docker and Portainer</li>
+                <li>File Browser and Cockpit server management</li>
+                <li>Other self-hosted applications</li>
+              </ul>
+              <div class="chips small">
+                <span class="tech">Ubuntu Linux</span
+                ><span class="tech">Oracle Cloud</span
+                ><span class="tech">Docker</span
+                ><span class="tech">Portainer</span
+                ><span class="tech">Tailscale</span
+                ><span class="tech">Pi-hole</span
+                ><span class="tech">Unbound</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="#"
+                  class="btn btn-small btn-outline placeholder-link"
+                  data-label="GitHub repository"
+                  ><i class="fa-brands fa-github"></i> GitHub</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section id="experience" class="section alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">06</span>
+            <h2>Professional Experience</h2>
+            <p class="section-sub">Transferable workplace experience</p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item reveal">
+              <div class="timeline-marker">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="timeline-card">
+                <span class="badge">Full-time</span>
+                <h3>Account Assistant</h3>
+                <p class="tl-org">ECU Worldwide</p>
+                <p class="tl-meta">
+                  <i class="fa-regular fa-calendar"></i> February 2025 &ndash;
+                  May 2026 &middot; approx. 1 year 4 months
+                </p>
+                <p class="tl-meta">
+                  <i class="fa-solid fa-location-dot"></i> Colombo, Sri Lanka
+                </p>
+                <p>
+                  Worked in a professional business environment, gaining
+                  practical workplace experience and exposure to administrative
+                  and account-related responsibilities.
+                </p>
+                <p class="mini-title">Transferable skills developed</p>
+                <div class="chips small">
+                  <span class="tech">Communication</span
+                  ><span class="tech">Attention to detail</span
+                  ><span class="tech">Organisation &amp; time management</span
+                  ><span class="tech">Teamwork</span
+                  ><span class="tech">Responsibility</span
+                  ><span class="tech">Problem-solving</span
+                  ><span class="tech">Professional workplace practices</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== LEADERSHIP ===================== -->
+      <section id="leadership" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">07</span>
+            <h2>Leadership &amp; Community Activities</h2>
+            <p class="section-sub">Collaboration and continuous learning</p>
+          </div>
+
+          <div class="lead-grid">
+            <article class="lead-card reveal">
+              <i class="fa-solid fa-people-group"></i>
+              <h3>University Group Projects</h3>
+              <p>
+                Participating in collaborative engineering and technology
+                projects, including assistive technology and robotics
+                development.
+              </p>
+            </article>
+            <article class="lead-card reveal">
+              <i class="fa-solid fa-handshake"></i>
+              <h3>Team Collaboration</h3>
+              <p>
+                Working with team members to explore engineering problems,
+                discuss technical solutions, and develop practical project
+                concepts.
+              </p>
+            </article>
+            <article class="lead-card reveal">
+              <i class="fa-solid fa-book-open-reader"></i>
+              <h3>Technical Learning</h3>
+              <p>
+                Actively exploring electronics, robotics, Linux systems, cloud
+                infrastructure, and engineering technologies.
+              </p>
+            </article>
+            <article class="lead-card lead-empty reveal">
+              <i class="fa-solid fa-seedling"></i>
+              <h3>Environmental &amp; Community</h3>
+              <p class="editable">
+                [Add verified environmental activities, volunteering, university
+                societies, competitions and community involvement here.]
+              </p>
+            </article>
+            <article class="lead-card lead-empty reveal">
+              <i class="fa-solid fa-award"></i>
+              <h3>Leadership Positions</h3>
+              <p class="editable">[Add confirmed positions when available.]</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="section alt">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="section-kicker">08</span>
+            <h2>Contact</h2>
+            <p class="section-sub">
+              Open to internships, industrial training and graduate
+              opportunities
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info reveal">
+              <h3>Let's connect</h3>
+              <p>
+                Whether it is an internship, industrial training placement or an
+                engineering conversation, I would be glad to hear from you.
+              </p>
+
+              <ul class="contact-list">
+                <!-- EDIT: replace the placeholder text and links with your real details -->
+                <li>
+                  <i class="fa-solid fa-envelope"></i>
+                  <span class="editable" id="contact-email"
+                    >naduncharuka20@gmail.com</span
+                  >
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone"></i>
+                  <span class="editable">0767834166</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-location-dot"></i> Colombo, Sri Lanka
+                </li>
+                <li>
+                  <i class="fa-brands fa-linkedin"></i>
+                  <a
+                    href="https://www.linkedin.com/in/nadun-charuka"
+                    class="placeholder-link"
+                    data-label="LinkedIn"
+                    >www.linkedin.com/in/nadun-charuka</a
+                  >
+                </li>
+                <li>
+                  <i class="fa-brands fa-github"></i>
+                  <a
+                    href="https://github.com/naduncharuka"
+                    class="placeholder-link"
+                    data-label="GitHub"
+                    >https://github.com/naduncharuka</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!--
+            Contact form interface.
+            There is no server on a static site, so this form opens the visitor's email app (mailto).
+            To receive messages directly, connect a service such as Formspree or Azure Functions (see README).
+          -->
+            <form class="contact-form reveal" id="contact-form" novalidate>
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input
+                  type="text"
+                  id="cf-name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+                <small class="error" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input
+                  type="email"
+                  id="cf-email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                />
+                <small class="error" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="cf-subject">Subject</label>
+                <input
+                  type="text"
+                  id="cf-subject"
+                  name="subject"
+                  placeholder="Internship opportunity"
+                />
+              </div>
+              <div class="field">
+                <label for="cf-message">Message</label>
+                <textarea
+                  id="cf-message"
+                  name="message"
+                  rows="5"
+                  placeholder="How can I help?"
+                  required
+                ></textarea>
+                <small class="error" aria-live="polite"></small>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+              <p
+                class="form-status"
+                id="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>
+          &copy; <span id="year">2026</span> Nadun Charuka Perera. All rights
+          reserved.
+        </p>
+        <p class="footer-sub">
+          Engineering Technology &middot; Wayamba University of Sri Lanka
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button
+      id="back-to-top"
+      class="back-to-top"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast message (used for placeholder links) -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

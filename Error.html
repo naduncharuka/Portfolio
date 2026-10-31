@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found | Nadun Charuka Perera</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+  </script>
+  <style>
+    /* Page-specific styles for the error page */
+    .error-wrap { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 2rem; position: relative; overflow: hidden;
+      background: radial-gradient(800px 400px at 80% 10%, rgba(79,155,255,.2), transparent 60%), var(--bg); }
+    .error-code { font-family: var(--font-head); font-size: clamp(5rem, 22vw, 11rem); font-weight: 700; line-height: 1; margin: 0;
+      background: linear-gradient(135deg, var(--blue-500), var(--sky-300)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .error-wrap h1 { font-size: clamp(1.4rem, 3vw, 2rem); margin: 0.6rem 0; }
+    .error-wrap p { color: var(--text-muted); max-width: 46ch; margin: 0 auto 1.8rem; }
+    .error-icon { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.8rem; }
+  </style>
+</head>
+<body>
+  <main class="error-wrap">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div style="position:relative">
+      <div class="error-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <p class="error-code">404</p>
+      <h1>This page could not be found</h1>
+      <p>The page you are looking for may have moved, or the link may be incorrect. Let's get you back on track.</p>
+      <a href="/" class="btn btn-primary"><i class="fa-solid fa-house"></i> Back to Portfolio</a>
+    </div>
+  </main>
+</body>
+</html>
