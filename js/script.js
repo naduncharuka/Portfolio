@@ -126,20 +126,119 @@
     revealEls.forEach(function (el) { el.classList.add("visible"); });
   }
 
-  /* ---------- 5. SKILL CATEGORY FILTER ---------- */
+  /* ---------- 5. SKILL ICONS (two endless rows) + PATH FILTER ----------
+     EDIT: add or remove skills in this list.
+       name: shown on hover
+       icon: Devicon file name (https://devicon.dev) or a full image URL
+       fa:   Font Awesome class used if the image cannot load
+       path: "eng" = Engineering Technology, "dev" = Developer / coding
+     The list is split between the top row and the bottom row, so the two
+     rows never show the same icon. */
+  var ICON_BASE = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+  function dv(n) { return ICON_BASE + n + "/" + n + "-original.svg"; }
+
+  var SKILLS = [
+    // ----- Engineering Technology -----
+    { name: "Arduino",              icon: dv("arduino"),      fa: "fa-solid fa-microchip",        path: "eng" },
+    { name: "ESP32",                icon: "",                  fa: "fa-solid fa-wifi",             path: "eng" },
+    { name: "Raspberry Pi",         icon: dv("raspberrypi"),  fa: "fa-brands fa-raspberry-pi",    path: "eng" },
+    { name: "Tinkercad",            icon: "",                  fa: "fa-solid fa-cube",             path: "eng" },
+    { name: "AutoCAD (learning)",   icon: "",                  fa: "fa-solid fa-compass-drafting", path: "eng" },
+    { name: "Circuit prototyping",  icon: "",                  fa: "fa-solid fa-bolt",             path: "eng" },
+    { name: "Sensors & relays",     icon: "",                  fa: "fa-solid fa-satellite-dish",   path: "eng" },
+    { name: "Servo & motor control",icon: "",                  fa: "fa-solid fa-gear",             path: "eng" },
+    { name: "Robotics",             icon: "",                  fa: "fa-solid fa-robot",            path: "eng" },
+    { name: "Hardware debugging",   icon: "",                  fa: "fa-solid fa-screwdriver-wrench", path: "eng" },
+    // ----- Developer -----
+    { name: "Python",               icon: dv("python"),       fa: "fa-brands fa-python",          path: "dev" },
+    { name: "C Language",           icon: dv("c"),            fa: "fa-solid fa-c",                path: "dev" },
+    { name: "HTML",                 icon: dv("html5"),        fa: "fa-brands fa-html5",           path: "dev" },
+    { name: "CSS",                  icon: dv("css3"),         fa: "fa-brands fa-css3-alt",        path: "dev" },
+    { name: "Bootstrap",            icon: dv("bootstrap"),    fa: "fa-brands fa-bootstrap",       path: "dev" },
+    { name: "JavaScript",           icon: dv("javascript"),   fa: "fa-brands fa-js",              path: "dev" },
+    { name: "Git",                  icon: dv("git"),          fa: "fa-brands fa-git-alt",         path: "dev" },
+    { name: "GitHub",               icon: dv("github"),       fa: "fa-brands fa-github",          path: "dev" },
+    { name: "VS Code",              icon: dv("vscode"),       fa: "fa-solid fa-code",             path: "dev" },
+    { name: "MongoDB",              icon: dv("mongodb"),      fa: "fa-solid fa-database",         path: "dev" },
+    { name: "Ubuntu",               icon: dv("ubuntu"),       fa: "fa-brands fa-ubuntu",          path: "dev" },
+    { name: "Linux",                icon: dv("linux"),        fa: "fa-brands fa-linux",           path: "dev" },
+    { name: "Docker",               icon: dv("docker"),       fa: "fa-brands fa-docker",          path: "dev" },
+    { name: "Oracle Servers",       icon: dv("oracle"),       fa: "fa-solid fa-server",           path: "dev" },
+    { name: "Bash / Terminal",      icon: dv("bash"),         fa: "fa-solid fa-terminal",         path: "dev" },
+    { name: "Node.js",              icon: dv("nodejs"),       fa: "fa-brands fa-node-js",         path: "dev" },
+    { name: "Figma",                icon: dv("figma"),        fa: "fa-brands fa-figma",           path: "dev" },
+    { name: "Windows",              icon: dv("windows8"),     fa: "fa-brands fa-windows",         path: "dev" }
+  ];
+
+  var trackA = $("#track-a");
+  var trackB = $("#track-b");
+
+  function makeTile(skill) {
+    var tile = document.createElement("div");
+    tile.className = "icon-tile";
+    tile.setAttribute("data-name", skill.name);
+    tile.setAttribute("title", skill.name);
+
+    function useFallback() {
+      tile.innerHTML = "";
+      var i = document.createElement("i");
+      i.className = skill.fa;
+      i.setAttribute("aria-hidden", "true");
+      tile.appendChild(i);
+    }
+
+    if (skill.icon) {
+      var img = document.createElement("img");
+      img.src = skill.icon;
+      img.alt = skill.name;
+      img.loading = "lazy";
+      img.addEventListener("error", useFallback);
+      tile.appendChild(img);
+    } else {
+      useFallback();
+    }
+    return tile;
+  }
+
+  // Fill one row. The set is repeated until it is wider than a big screen,
+  // then doubled, so the CSS animation (-50%) loops with no visible jump.
+  function fillTrack(track, list) {
+    track.innerHTML = "";
+    if (!list.length) return;
+    var setWidth = list.length * 96;               // tile 80px + gap 16px
+    var repeats = Math.max(1, Math.ceil(2400 / setWidth));
+    for (var half = 0; half < 2; half++) {
+      for (var r = 0; r < repeats; r++) {
+        list.forEach(function (skill) {
+          var tile = makeTile(skill);
+          if (half === 1) tile.setAttribute("aria-hidden", "true"); // duplicate copy
+          track.appendChild(tile);
+        });
+      }
+    }
+    // Speed: about 55px per second whatever the length
+    var pixels = setWidth * repeats;
+    track.style.animationDuration = Math.max(20, Math.round(pixels / 55)) + "s";
+  }
+
+  function renderSkills(filter) {
+    if (!trackA || !trackB) return;
+    var list = SKILLS.filter(function (s) { return filter === "all" || s.path === filter; });
+    // Alternate items between the rows so each row has different icons
+    var rowA = list.filter(function (_, i) { return i % 2 === 0; });
+    var rowB = list.filter(function (_, i) { return i % 2 === 1; });
+    fillTrack(trackA, rowA);
+    fillTrack(trackB, rowB);
+  }
+
   var tabs = $$(".tab");
-  var groups = $$(".skill-group");
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
-      var filter = tab.getAttribute("data-filter");
       tabs.forEach(function (t) { t.classList.toggle("active", t === tab); });
-      groups.forEach(function (g) {
-        var show = filter === "all" || g.getAttribute("data-cat") === filter;
-        g.classList.toggle("hidden", !show);
-        if (show) g.classList.add("visible"); // make sure revealed groups stay visible
-      });
+      renderSkills(tab.getAttribute("data-filter"));
     });
   });
+  renderSkills("all");
 
   /* ---------- 6. BACK TO TOP ---------- */
   if (backBtn) {
@@ -260,11 +359,11 @@
   /* ---------- 11. TYPING LINE IN THE HERO ----------
      EDIT: change the phrases below to whatever you like. */
   var TYPED_PHRASES = [
-    "coding",
-    "building websites",
-    "writing Python",
-    "working with Linux & Docker",
-    "tinkering with Arduino"
+    "engineering",
+    "building with Arduino",
+    "robotics and automation",
+    "coding and web design",
+    "learning something new"
   ];
   var typedEl = $("#typed");
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -291,6 +390,8 @@
      Each .stat-num counts items on the page, so the numbers update
      by themselves when you add a certificate, project or skill. */
   function countItems(el) {
+    // "skills" counts the SKILLS list above (all paths together)
+    if (el.getAttribute("data-count-of") === "skills") return SKILLS.length;
     var nodes = $$(el.getAttribute("data-count-of"));
     if (el.getAttribute("data-unique") === "true") {
       var seen = {};

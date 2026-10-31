@@ -568,6 +568,54 @@ p { margin: 0 0 1em; }
 }
 .footer-social a:hover { background: var(--blue-500); color: #fff; transform: translateY(-3px); text-decoration: none; }
 
+/* ---------- 7c. SKILL ICON ROWS (endless loop) ---------- */
+.tab i { margin-right: 0.35rem; }
+
+.marquee-wrap { display: grid; gap: 0.2rem; }
+.marquee {
+  overflow: hidden; padding: 1.1rem 0 1.9rem;
+  /* soft fade at both edges */
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track { display: flex; width: max-content; animation-timing-function: linear; animation-iteration-count: infinite; }
+/* Top row moves to the right, bottom row moves to the left. Swap the two names to reverse them. */
+.row-a .marquee-track { animation-name: slide-right; }
+.row-b .marquee-track { animation-name: slide-left; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes slide-left  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
+@keyframes slide-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+/* margin (not gap) keeps the two halves exactly equal so the loop has no jump */
+.icon-tile {
+  position: relative; flex: none; width: 80px; height: 80px; margin-right: 16px;
+  display: grid; place-items: center;
+  background: #f4f8ff; border: 1px solid var(--border); border-radius: 20px;
+  box-shadow: var(--shadow); color: var(--navy-700); font-size: 2rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.icon-tile img { width: 46px; height: 46px; object-fit: contain; }
+.icon-tile:hover { transform: translateY(-6px) scale(1.08); border-color: var(--accent); z-index: 2; }
+.icon-tile::after {
+  content: attr(data-name); position: absolute; top: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%); white-space: nowrap; padding: 0.2rem 0.65rem; border-radius: 999px;
+  background: var(--navy-700); color: #fff; border: 1px solid var(--blue-400);
+  font: 600 0.75rem var(--font-body); opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+}
+.icon-tile:hover::after { opacity: 1; }
+
+/* Profile buttons in Certifications & Badges */
+.profile-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-top: 2.5rem; }
+
+/* Highlight the main path card in About */
+.do-main { border-color: var(--accent); background: linear-gradient(160deg, var(--accent-soft), var(--surface)); }
+
+/* Reduced motion: no looping; let people scroll the rows by hand */
+@media (prefers-reduced-motion: reduce) {
+  .marquee { overflow-x: auto; mask-image: none; -webkit-mask-image: none; }
+}
+
 /* ---------- 8. ANIMATIONS ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
