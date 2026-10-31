@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nadun Charuka Perera | Engineering Technology Undergraduate</title>
+    <title>Nadun Charuka Perera | Developer, Web Designer &amp; Engineering Technology Undergraduate</title>
     <meta
       name="description"
-      content="Portfolio of Nadun Charuka Perera, Engineering Technology undergraduate at the Faculty of Technology, Wayamba University of Sri Lanka. Construction technology, electronics, robotics and embedded systems."
+      content="Portfolio of Nadun Charuka Perera: developer and web designer, and Engineering Technology undergraduate at Wayamba University of Sri Lanka. Python, HTML, CSS, Linux, Docker and Arduino projects."
     />
     <meta name="theme-color" content="#0a1930" />
+    <!-- Your photo is also used as the browser tab icon -->
+    <link rel="icon" href="assets/pic.jpg" />
 
     <!-- Fonts and icons (Google Fonts + Font Awesome via CDN) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,16 +38,21 @@
   <body>
     <!--
     HOW TO EDIT THIS SITE
-    - Anything written like [Add ...] is a placeholder. Replace it with your real details.
-    - Links with href="#" and class="placeholder-link" show a "not added yet" message until you set a real URL.
     - Search for "EDIT:" in this file to find the main spots to update.
+    - Education logos go in assets/edu/ (file names are in each education card).
+    - Certificate badge images (optional) go in assets/badges/.
+    - Links that are still href="#" with class "placeholder-link" show a "not added yet" message.
   -->
 
     <!-- ===================== NAVIGATION ===================== -->
     <header class="navbar" id="navbar">
       <div class="container nav-inner">
         <a href="#home" class="brand" aria-label="Go to top">
-          <span class="brand-mark">NP</span>
+          <!-- Your photo as the small logo. Initials show if the photo is missing. -->
+          <span class="brand-mark">
+            NP
+            <img src="assets/pic.jpg" alt="" class="fb-img" />
+          </span>
           <span class="brand-name">Nadun Perera</span>
         </a>
 
@@ -94,24 +101,30 @@
         <div class="container hero-inner">
           <div class="hero-text reveal">
             <p class="eyebrow">
-              <span class="dot"></span> Open to internships &amp; industrial
-              training
+              <span class="dot"></span> Open to internships, training &amp;
+              developer opportunities
             </p>
             <h1>Nadun Charuka Perera</h1>
             <h2 class="hero-title">
-              Engineering Technology Undergraduate
-              <span class="sep">|</span> Aspiring Engineer
+              <i class="fa-solid fa-code"></i> Developer
+              <span class="sep">|</span> Web Designer
             </h2>
             <p class="hero-sub">
-              Wayamba University of Sri Lanka &middot; Faculty of Technology
+              Engineering Technology Undergraduate &middot; Wayamba University
+              of Sri Lanka &middot; Faculty of Technology
             </p>
-            <p class="hero-tags">
-              Engineering <span>/</span> Construction Technology
-              <span>/</span> Electronics <span>/</span> Robotics
+
+            <!-- Typing line: edit the phrases in js/script.js (TYPED_PHRASES) -->
+            <p class="hero-typed" aria-live="off">
+              <span class="prompt">&gt;</span> I love
+              <span id="typed" class="typed-text">coding</span
+              ><span class="caret" aria-hidden="true"></span>
             </p>
+
             <p class="hero-lead">
-              Exploring engineering through technology, creativity and practical
-              innovation.
+              Coding is what drives me. I build websites, write programs and
+              explore Linux and cloud servers, and I use my engineering studies
+              to turn ideas into practical solutions.
             </p>
 
             <div class="hero-buttons">
@@ -132,22 +145,50 @@
             </div>
 
             <div class="social-row">
-              <!-- EDIT: replace href="#" with your real URLs -->
               <a
                 href="https://www.linkedin.com/in/nadun-charuka/"
-                class="social placeholder-link"
-                data-label="LinkedIn"
+                class="social"
                 target="_blank"
+                rel="noopener"
                 aria-label="LinkedIn"
+                title="LinkedIn"
                 ><i class="fa-brands fa-linkedin-in"></i
               ></a>
               <a
                 href="https://github.com/naduncharuka/"
-                class="social placeholder-link"
-                data-label="GitHub"
+                class="social"
                 target="_blank"
+                rel="noopener"
                 aria-label="GitHub"
+                title="GitHub"
                 ><i class="fa-brands fa-github"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/nadun_charuka/"
+                class="social"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                title="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/Nadun.Charuka.Perera"
+                class="social"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                title="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://t.me/Naddagg"
+                class="social"
+                target="_blank"
+                rel="noopener"
+                aria-label="Telegram"
+                title="Telegram"
+                ><i class="fa-brands fa-telegram"></i
               ></a>
               <a
                 href="https://learn.microsoft.com/users/NadunCharuka/"
@@ -155,6 +196,7 @@
                 target="_blank"
                 rel="noopener"
                 aria-label="Microsoft Learn profile"
+                title="Microsoft Learn"
                 ><i class="fa-brands fa-microsoft"></i
               ></a>
             </div>
@@ -162,9 +204,9 @@
 
           <div class="hero-visual reveal">
             <div class="photo-frame">
-              <!-- EDIT: add your photo at images/profile.jpg. If missing, initials are shown. -->
+              <!-- EDIT: replace the photo path if your profile image changes. -->
               <img
-                src="images/profile.jpg"
+                src="assets/pic.jpg"
                 alt="Portrait of Nadun Charuka Perera"
                 id="profile-img"
               />
@@ -176,14 +218,18 @@
                 NP
               </div>
             </div>
+            <!-- Floating chips around the photo -->
             <div class="float-chip chip-1">
-              <i class="fa-solid fa-microchip"></i> Embedded
+              <i class="fa-solid fa-code"></i> Developer
+            </div>
+            <div class="float-chip chip-4">
+              <i class="fa-brands fa-python"></i> Python
             </div>
             <div class="float-chip chip-2">
               <i class="fa-solid fa-robot"></i> Robotics
             </div>
             <div class="float-chip chip-3">
-              <i class="fa-solid fa-helmet-safety"></i> Construction Tech
+              <i class="fa-solid fa-palette"></i> Web Designer
             </div>
           </div>
         </div>
@@ -204,40 +250,43 @@
           <div class="about-grid">
             <div class="about-text reveal">
               <p>
-                I am an Engineering Technology undergraduate at the Faculty of
+                I am a developer and web designer who loves coding, and an
+                Engineering Technology undergraduate at the Faculty of
                 Technology, Wayamba University of Sri Lanka.
               </p>
               <p>
-                I have a strong interest in engineering, construction
-                technology, electronics, robotics, and emerging technologies. I
-                enjoy exploring how technology can solve practical problems and
-                improve everyday life.
+                Coding is the main reason I built this portfolio. I enjoy
+                designing and building websites with HTML, CSS and Bootstrap,
+                writing programs in Python and C, and managing my work with Git
+                and GitHub.
               </p>
               <p>
-                My interests include construction and the built environment,
-                computer-aided design (CAD), embedded systems, microcontrollers,
-                automation, and hands-on engineering projects.
+                I also work with Ubuntu and Linux servers, Docker and Oracle
+                cloud servers, and I use Arduino to bring software together with
+                electronics, as in my automated water level controller.
               </p>
               <p>
-                I have practical experience in a professional working
+                Alongside my studies I have worked in a professional business
                 environment, where I developed communication, organisation,
-                teamwork, and problem-solving skills.
+                teamwork and problem-solving skills.
               </p>
               <p>
-                I am continuously developing my technical knowledge through
-                university studies, personal projects, online learning
-                platforms, and independent experimentation.
-              </p>
-              <p>
-                My goal is to become a capable engineering professional who can
-                combine engineering knowledge, creativity, and modern technology
-                to develop practical and sustainable solutions.
+                I keep learning through university, personal projects and online
+                platforms. My goal is to become a capable professional who
+                combines coding, design and engineering knowledge to build
+                practical and sustainable solutions.
               </p>
             </div>
 
             <aside class="about-card reveal">
               <h3>Quick Facts</h3>
               <ul class="facts">
+                <li>
+                  <i class="fa-solid fa-code"></i>
+                  <div>
+                    <span>Focus</span>Coding, web design, Linux &amp; cloud
+                  </div>
+                </li>
                 <li>
                   <i class="fa-solid fa-graduation-cap"></i>
                   <div><span>Degree</span>B.Eng. Technology (Honours)</div>
@@ -257,23 +306,67 @@
                   <i class="fa-solid fa-bullseye"></i>
                   <div>
                     <span>Seeking</span>Internships, industrial training,
-                    graduate opportunities
+                    developer opportunities
                   </div>
                 </li>
               </ul>
-
-              <h3 class="mt">Interests</h3>
-              <div class="chips">
-                <span class="chip">Construction Technology</span>
-                <span class="chip">Robotics &amp; Automation</span>
-                <span class="chip">Electronics</span>
-                <span class="chip">Embedded Systems</span>
-                <span class="chip">AutoCAD / CAD</span>
-                <span class="chip">Linux &amp; Open Source</span>
-                <span class="chip">Cloud &amp; Self-Hosting</span>
-                <span class="chip">Problem-Solving</span>
-              </div>
             </aside>
+          </div>
+
+          <!-- Numbers are counted automatically from the page (see script.js) -->
+          <div class="stats reveal">
+            <div class="stat">
+              <strong class="stat-num" data-count-of=".cert-card:not(.cert-empty)">0</strong>
+              <span>Certifications</span>
+            </div>
+            <div class="stat">
+              <strong class="stat-num" data-count-of=".project-card">0</strong>
+              <span>Projects</span>
+            </div>
+            <div class="stat">
+              <strong class="stat-num" data-count-of=".skill" data-unique="true">0</strong>
+              <span>Skills &amp; Tools</span>
+            </div>
+            <div class="stat">
+              <strong class="stat-num" data-count-of=".edu-card, .school-row">0</strong>
+              <span>Education Stages</span>
+            </div>
+          </div>
+
+          <!-- What I do -->
+          <div class="do-grid">
+            <article class="do-card reveal">
+              <i class="fa-solid fa-code"></i>
+              <h3>Developer</h3>
+              <p>
+                Python and C programming, Git and GitHub workflows, MongoDB, and
+                building with VS Code.
+              </p>
+            </article>
+            <article class="do-card reveal">
+              <i class="fa-solid fa-palette"></i>
+              <h3>Web Designer</h3>
+              <p>
+                Clean, responsive websites using HTML, CSS and Bootstrap, like
+                this portfolio.
+              </p>
+            </article>
+            <article class="do-card reveal">
+              <i class="fa-brands fa-linux"></i>
+              <h3>Linux &amp; Cloud</h3>
+              <p>
+                Ubuntu, Linux terminal, Docker and Oracle cloud servers for
+                self-hosted services.
+              </p>
+            </article>
+            <article class="do-card reveal">
+              <i class="fa-solid fa-microchip"></i>
+              <h3>Engineering Tech</h3>
+              <p>
+                Arduino projects that link code with sensors, circuits and
+                real-world control.
+              </p>
+            </article>
           </div>
         </div>
       </section>
@@ -287,88 +380,99 @@
             <p class="section-sub">Academic background</p>
           </div>
 
-          <div class="timeline">
-            <article class="timeline-item reveal">
-              <div class="timeline-marker">
-                <i class="fa-solid fa-graduation-cap"></i>
+          <!--
+            EDIT: add the official logos in assets/edu/ with the file names below.
+            Until a logo exists, the initials are shown instead.
+          -->
+
+          <!-- Main qualifications (large) -->
+          <div class="edu-grid">
+            <article class="edu-card reveal">
+              <div class="edu-top">
+                <div class="edu-logo large" aria-hidden="false">
+                  <span>WUSL</span>
+                  <img src="assets/edu/wayamba.png" alt="Wayamba University of Sri Lanka logo" class="fb-img" />
+                </div>
+                <span class="badge badge-live">Pursuing</span>
               </div>
-              <div class="timeline-card">
-                <span class="badge badge-live">Currently Undergraduate</span>
-                <h3>Bachelor of Engineering Technology (Honours)</h3>
-                <p class="tl-org">
-                  Wayamba University of Sri Lanka &middot; Faculty of Technology
-                </p>
-                <p class="tl-meta">
-                  <i class="fa-regular fa-calendar"></i>
-                  <span class="editable"
-                    >[Add starting year &ndash; expected graduation year]</span
-                  >
-                </p>
-                <p class="tl-meta">
-                  <i class="fa-solid fa-location-dot"></i> Sri Lanka
-                </p>
-                <p>
-                  Department of Construction and Environmental Management
-                  Technology (CEMT).
-                </p>
-                <p class="note">
-                  <i class="fa-solid fa-circle-info"></i> Final specialisation
-                  will be added once confirmed.
-                </p>
-              </div>
+              <h3>Bachelor of Engineering Technology (Honours)</h3>
+              <p class="edu-org">
+                Wayamba University of Sri Lanka &middot; Faculty of Technology
+              </p>
+              <p class="edu-meta">
+                <i class="fa-regular fa-calendar"></i> 2026 &ndash; 2030
+              </p>
+              <p class="edu-meta">
+                <i class="fa-solid fa-location-dot"></i> Sri Lanka
+              </p>
+              <p class="edu-note">
+                Department of Construction and Environmental Management
+                Technology (CEMT). Final specialisation will be added once
+                confirmed.
+              </p>
             </article>
 
-            <article class="timeline-item reveal">
-              <div class="timeline-marker">
-                <i class="fa-solid fa-school"></i>
+            <article class="edu-card reveal">
+              <div class="edu-top">
+                <div class="edu-logo large">
+                  <span>ACHS</span>
+                  <img src="assets/edu/aquinas.png" alt="Aquinas College of Higher Studies logo" class="fb-img" />
+                </div>
+                <span class="badge">Diploma</span>
               </div>
-              <div class="timeline-card">
-                <h3>School Education</h3>
-                <p class="tl-org">Lumbini College</p>
-                <p class="tl-meta">
-                  <i class="fa-solid fa-location-dot"></i> Colombo, Sri Lanka
-                </p>
-                <p class="tl-meta">
-                  <i class="fa-solid fa-scroll"></i>
-                  <span class="editable"
-                    >[Add GCE O/L, GCE A/L and other qualifications when
-                    available]</span
-                  >
-                </p>
-              </div>
+              <h3>Diploma in English Language and Literature</h3>
+              <p class="edu-org">Aquinas College of Higher Studies</p>
+              <p class="edu-meta">
+                <i class="fa-regular fa-calendar"></i> Jul 2022 &ndash; Jun 2026
+              </p>
+              <p class="edu-meta">
+                <i class="fa-solid fa-book-open"></i> English Language and
+                Literature
+              </p>
             </article>
+          </div>
 
-            <article class="timeline-item reveal">
-              <div class="timeline-marker">
-                <i class="fa-solid fa-language"></i>
-              </div>
-              <div class="timeline-card">
-                <h3>Diploma in English Language and Literature</h3>
-                <p class="tl-org">Aquinas College of Higher Studies</p>
-                <p class="tl-meta">
-                  <i class="fa-regular fa-calendar"></i> Jul 2022 &ndash; Jun
-                  2026
-                </p>
-                <p class="tl-meta">
-                  <i class="fa-solid fa-book-open"></i> English Language and
-                  Literature
-                </p>
-              </div>
-            </article>
+          <!-- School education (smaller) -->
+          <div class="school-card reveal">
+            <h3 class="school-title">
+              <i class="fa-solid fa-school"></i> School Education
+            </h3>
 
-            <article class="timeline-item reveal">
-              <div class="timeline-marker">
-                <i class="fa-solid fa-laptop-code"></i>
+            <div class="school-row">
+              <div class="edu-logo small">
+                <span>LC</span>
+                <img src="assets/edu/lumbini.png" alt="Lumbini College logo" class="fb-img" />
               </div>
-              <div class="timeline-card">
-                <h3>Additional Learning</h3>
-                <p class="tl-org">Microsoft Learn &middot; Online</p>
-                <p>
-                  Self-directed learning in Git and cloud computing concepts.
-                  See the Certifications section for completed modules.
-                </p>
+              <div class="school-info">
+                <strong>Advanced Level Education</strong>
+                <span>Lumbini College &middot; Colombo, Sri Lanka</span>
               </div>
-            </article>
+              <span class="school-years">2023 &ndash; 2024</span>
+            </div>
+
+            <div class="school-row">
+              <div class="edu-logo small">
+                <span>SMV</span>
+                <img src="assets/edu/susamayawardhana.png" alt="Susamayawardhana Maha Vidyalaya logo" class="fb-img" />
+              </div>
+              <div class="school-info">
+                <strong>Ordinary Level Education</strong>
+                <span>Susamayawardhana Maha Vidyalaya &middot; Colombo, Sri Lanka</span>
+              </div>
+              <span class="school-years">2016 &ndash; 2022</span>
+            </div>
+
+            <div class="school-row">
+              <div class="edu-logo small">
+                <span>MV</span>
+                <img src="assets/edu/mahinda.png" alt="Mahinda Vidyalaya logo" class="fb-img" />
+              </div>
+              <div class="school-info">
+                <strong>Primary Education</strong>
+                <span>Mahinda Vidyalaya &middot; Colombo 10, Sri Lanka</span>
+              </div>
+              <span class="school-years">2011 &ndash; 2016</span>
+            </div>
           </div>
         </div>
       </section>
@@ -378,46 +482,106 @@
         <div class="container">
           <div class="section-head reveal">
             <span class="section-kicker">03</span>
-            <h2>Certifications &amp; Achievements</h2>
+            <h2>Certifications &amp; Badges</h2>
             <p class="section-sub">Verified learning achievements</p>
           </div>
 
           <div class="cert-grid">
-            <!-- Certificate card. EDIT: add an image to images/certificates/ and change the img src to show it. -->
+            <!--
+              Badge card. EDIT: to show the real badge picture, save it in assets/badges/
+              using the file name in the img tag. A badge icon shows until then.
+            -->
+
+            <!-- AI Fundamentals (LEARN) -->
             <article class="cert-card reveal">
               <div class="cert-image">
-                <img
-                  src="images/certificates/intro-to-git.jpg"
-                  alt="Introduction to Git certificate"
-                  class="cert-img"
-                />
-                <div class="cert-fallback">
-                  <i class="fa-brands fa-git-alt"></i
-                  ><span>Certificate image to be added</span>
-                </div>
+                <div class="cert-fallback"><i class="fa-solid fa-robot"></i></div>
+                <img src="assets/badges/ai-fundamentals.png" alt="AI Fundamentals certificate" class="fb-img cert-img" />
               </div>
               <div class="cert-body">
-                <h3>Introduction to Git</h3>
+                <h3>AI Fundamentals</h3>
+                <p class="cert-org">
+                  <i class="fa-solid fa-building-columns"></i> LEARN &middot;
+                  Lanka Education and Research Network
+                </p>
+                <p class="cert-date">
+                  <i class="fa-regular fa-calendar-check"></i> Course completed
+                </p>
+                <p class="cert-desc">
+                  Core AI concepts and applications, and how AI can improve
+                  productivity beyond simple prompting.
+                </p>
+                <a
+                  href="https://www.linkedin.com/posts/nadun-charuka_ai-artificialintelligence-aifundamentals-ugcPost-7503374691907141632-PJmh/"
+                  class="btn btn-small btn-outline"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-linkedin-in"></i> View LinkedIn Post</a
+                >
+              </div>
+            </article>
+
+            <!-- Microsoft Learn: Describe the benefits of using cloud services -->
+            <article class="cert-card reveal">
+              <div class="cert-image">
+                <div class="cert-fallback"><i class="fa-solid fa-medal"></i></div>
+                <img src="assets/badges/cloud-benefits.png" alt="Describe the benefits of using cloud services badge" class="fb-img cert-img" />
+              </div>
+              <div class="cert-body">
+                <h3>Describe the benefits of using cloud services</h3>
                 <p class="cert-org">
                   <i class="fa-brands fa-microsoft"></i> Microsoft Learn
                 </p>
                 <p class="cert-date">
-                  <i class="fa-regular fa-calendar-check"></i> 24 October 2026
+                  <i class="fa-regular fa-calendar-check"></i> Issued Oct 2026
                 </p>
+                <div class="chips small">
+                  <span class="tech">Cloud Computing</span
+                  ><span class="tech">Cloud Services</span>
+                </div>
+                <a
+                  href="https://learn.microsoft.com/en-us/users/naduncharuka/achievements/bu4unq4d"
+                  class="btn btn-small btn-outline"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-solid fa-circle-check"></i> Show credential</a
+                >
               </div>
             </article>
 
+            <!-- Microsoft Learn: Describe cloud computing -->
             <article class="cert-card reveal">
               <div class="cert-image">
-                <img
-                  src="images/certificates/cloud-service-types.jpg"
-                  alt="Describe cloud service types certificate"
-                  class="cert-img"
-                />
-                <div class="cert-fallback">
-                  <i class="fa-solid fa-cloud"></i
-                  ><span>Certificate image to be added</span>
+                <div class="cert-fallback"><i class="fa-solid fa-medal"></i></div>
+                <img src="assets/badges/cloud-computing.png" alt="Describe cloud computing badge" class="fb-img cert-img" />
+              </div>
+              <div class="cert-body">
+                <h3>Describe cloud computing</h3>
+                <p class="cert-org">
+                  <i class="fa-brands fa-microsoft"></i> Microsoft Learn
+                </p>
+                <p class="cert-date">
+                  <i class="fa-regular fa-calendar-check"></i> Issued Oct 2026
+                </p>
+                <div class="chips small">
+                  <span class="tech">Cloud Computing</span
+                  ><span class="tech">Cloud-Native Architecture</span>
                 </div>
+                <a
+                  href="https://learn.microsoft.com/api/achievements/share/en-us/NadunCharuka/ABYB5HC7?sharingId=7A8CA03606A90521"
+                  class="btn btn-small btn-outline"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-solid fa-circle-check"></i> Show credential</a
+                >
+              </div>
+            </article>
+
+            <!-- Microsoft Learn: Describe cloud service types -->
+            <article class="cert-card reveal">
+              <div class="cert-image">
+                <div class="cert-fallback"><i class="fa-solid fa-medal"></i></div>
+                <img src="assets/badges/cloud-service-types.png" alt="Describe cloud service types badge" class="fb-img cert-img" />
               </div>
               <div class="cert-body">
                 <h3>Describe cloud service types</h3>
@@ -425,8 +589,46 @@
                   <i class="fa-brands fa-microsoft"></i> Microsoft Learn
                 </p>
                 <p class="cert-date">
-                  <i class="fa-regular fa-calendar-check"></i> 24 October 2026
+                  <i class="fa-regular fa-calendar-check"></i> Issued Oct 2026
                 </p>
+                <div class="chips small">
+                  <span class="tech">Cloud Computing</span
+                  ><span class="tech">Cloud Services</span>
+                </div>
+                <a
+                  href="https://learn.microsoft.com/api/achievements/share/en-us/NadunCharuka/FEWEDFCX?sharingId=7A8CA03606A90521"
+                  class="btn btn-small btn-outline"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-solid fa-circle-check"></i> Show credential</a
+                >
+              </div>
+            </article>
+
+            <!-- Microsoft Learn: Introduction to Git -->
+            <article class="cert-card reveal">
+              <div class="cert-image">
+                <div class="cert-fallback"><i class="fa-brands fa-git-alt"></i></div>
+                <img src="assets/badges/intro-to-git.png" alt="Introduction to Git badge" class="fb-img cert-img" />
+              </div>
+              <div class="cert-body">
+                <h3>Introduction to Git</h3>
+                <p class="cert-org">
+                  <i class="fa-brands fa-microsoft"></i> Microsoft Learn
+                </p>
+                <p class="cert-date">
+                  <i class="fa-regular fa-calendar-check"></i> Issued Oct 2026
+                </p>
+                <div class="chips small">
+                  <span class="tech">Git</span><span class="tech">GitHub</span>
+                </div>
+                <a
+                  href="https://learn.microsoft.com/api/achievements/share/en-us/NadunCharuka/9A6AQ2NU?sharingId=7A8CA03606A90521"
+                  class="btn btn-small btn-outline"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-solid fa-circle-check"></i> Show credential</a
+                >
               </div>
             </article>
 
@@ -435,10 +637,7 @@
               <div class="cert-empty-inner">
                 <i class="fa-solid fa-plus"></i>
                 <h3>More to come</h3>
-                <p>
-                  AutoCAD, programming and engineering certifications will be
-                  added once confirmed.
-                </p>
+                <p>New certifications will be added as I complete them.</p>
               </div>
             </article>
           </div>
@@ -461,10 +660,8 @@
         <div class="container">
           <div class="section-head reveal">
             <span class="section-kicker">04</span>
-            <h2>Technical Skills</h2>
-            <p class="section-sub">
-              Learning and working areas, grouped by field
-            </p>
+            <h2>Skills</h2>
+            <p class="section-sub">What I code with, build with and run</p>
           </div>
 
           <!-- Category tabs (handled in script.js) -->
@@ -474,105 +671,67 @@
             aria-label="Skill categories"
           >
             <button class="tab active" role="tab" data-filter="all">All</button>
-            <button class="tab" role="tab" data-filter="electronics">
-              Electronics &amp; Embedded
+            <button class="tab" role="tab" data-filter="developer">
+              Developer
             </button>
-            <button class="tab" role="tab" data-filter="engineering">
-              Engineering &amp; Design
+            <button class="tab" role="tab" data-filter="web">
+              Web Design
             </button>
-            <button class="tab" role="tab" data-filter="programming">
-              Programming
+            <button class="tab" role="tab" data-filter="servers">
+              Servers &amp; OS
             </button>
-            <button class="tab" role="tab" data-filter="cloud">
-              OS &amp; Cloud
+            <button class="tab" role="tab" data-filter="engtech">
+              Engineering Tech
             </button>
-            <button class="tab" role="tab" data-filter="tools">Tools</button>
           </div>
 
           <div class="skill-groups">
-            <!-- Electronics and Embedded Systems -->
-            <div class="skill-group reveal" data-cat="electronics">
-              <h3>
-                <i class="fa-solid fa-microchip"></i> Electronics &amp; Embedded
-                Systems
-              </h3>
+            <!-- Developer -->
+            <div class="skill-group reveal" data-cat="developer">
+              <h3><i class="fa-solid fa-code"></i> Developer</h3>
               <div class="chips">
-                <span class="skill">Arduino</span>
-                <span class="skill">ESP32</span>
-                <span class="skill">Microcontrollers</span>
-                <span class="skill">Electronic prototyping</span>
-                <span class="skill">Ultrasonic sensors</span>
-                <span class="skill">Servo motors</span>
-                <span class="skill">Basic robotics systems</span>
+                <span class="skill"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="skill"><i class="fa-solid fa-c"></i> C Language</span>
+                <span class="skill"><i class="fa-brands fa-git-alt"></i> Git</span>
+                <span class="skill"><i class="fa-brands fa-github"></i> GitHub</span>
+                <span class="skill"><i class="fa-solid fa-terminal"></i> VS Code</span>
+                <span class="skill"><i class="fa-solid fa-database"></i> MongoDB</span>
               </div>
             </div>
 
-            <!-- Engineering and Design -->
-            <div class="skill-group reveal" data-cat="engineering">
-              <h3>
-                <i class="fa-solid fa-compass-drafting"></i> Engineering &amp;
-                Design
-              </h3>
+            <!-- Web design -->
+            <div class="skill-group reveal" data-cat="web">
+              <h3><i class="fa-solid fa-palette"></i> Web Design</h3>
               <div class="chips">
-                <span class="skill"
-                  >Construction Technology <em>Academic field</em></span
-                >
-                <span class="skill">AutoCAD <em>Learning interest</em></span>
-                <span class="skill"
-                  >Engineering drawing <em>Academic interest</em></span
-                >
-                <span class="skill">Computer-aided design</span>
-                <span class="skill">Technical problem-solving</span>
+                <span class="skill"><i class="fa-brands fa-html5"></i> HTML</span>
+                <span class="skill"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                <span class="skill"><i class="fa-brands fa-bootstrap"></i> Bootstrap CSS</span>
+                <span class="skill"><i class="fa-brands fa-js"></i> JavaScript</span>
               </div>
             </div>
 
-            <!-- Programming -->
-            <div class="skill-group reveal" data-cat="programming">
-              <h3>
-                <i class="fa-solid fa-code"></i> Programming &amp; Development
-              </h3>
+            <!-- Servers and operating systems -->
+            <div class="skill-group reveal" data-cat="servers">
+              <h3><i class="fa-solid fa-server"></i> Servers &amp; OS</h3>
               <div class="chips">
-                <span class="skill">C Programming <em>Beginner</em></span>
-                <span class="skill">HTML <em>Basic</em></span>
-                <span class="skill">CSS <em>Basic</em></span>
-                <span class="skill">JavaScript <em>Basic / Learning</em></span>
+                <span class="skill"><i class="fa-brands fa-ubuntu"></i> Ubuntu</span>
+                <span class="skill"><i class="fa-brands fa-linux"></i> Linux</span>
+                <span class="skill"><i class="fa-solid fa-cloud"></i> Oracle Servers</span>
+                <span class="skill"><i class="fa-brands fa-docker"></i> Docker</span>
               </div>
             </div>
 
-            <!-- Operating systems and cloud -->
-            <div class="skill-group reveal" data-cat="cloud">
-              <h3>
-                <i class="fa-solid fa-cloud"></i> Operating Systems &amp; Cloud
-              </h3>
+            <!-- Engineering technology -->
+            <div class="skill-group reveal" data-cat="engtech">
+              <h3><i class="fa-solid fa-microchip"></i> Engineering Tech</h3>
               <div class="chips">
-                <span class="skill">Ubuntu Linux</span>
-                <span class="skill">Windows</span>
-                <span class="skill">Oracle Cloud Infrastructure</span>
-                <span class="skill">Docker</span>
-                <span class="skill">Tailscale</span>
-                <span class="skill">Self-hosted services</span>
-                <span class="skill">Basic cloud computing concepts</span>
-              </div>
-            </div>
-
-            <!-- Tools -->
-            <div class="skill-group reveal" data-cat="tools">
-              <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
-              <div class="chips">
-                <span class="skill">Git</span>
-                <span class="skill">GitHub</span>
-                <span class="skill">Microsoft Learn</span>
-                <span class="skill">Visual Studio Code</span>
-                <span class="skill">Linux Terminal</span>
+                <span class="skill"><i class="fa-solid fa-microchip"></i> Arduino</span>
+                <span class="skill">Circuit prototyping</span>
+                <span class="skill">Sensor integration</span>
+                <span class="skill">Tinkercad</span>
               </div>
             </div>
           </div>
-
-          <p class="fine-print reveal">
-            <i class="fa-solid fa-circle-info"></i> These are areas I am
-            learning and working in, not claims of professional proficiency in
-            every tool.
-          </p>
         </div>
       </section>
 
@@ -588,7 +747,80 @@
           </div>
 
           <div class="project-grid">
-            <!-- ---------- Project 1 ---------- -->
+            <!-- ---------- Featured: Water Level Indicator ---------- -->
+            <article class="project-card project-featured reveal">
+              <div class="project-top">
+                <div class="project-icon">
+                  <i class="fa-solid fa-droplet"></i>
+                </div>
+                <span class="badge badge-live">Completed Project</span>
+              </div>
+              <h3>Automated Water Level Indicator and Controller</h3>
+
+              <div class="featured-cols">
+                <div>
+                  <p>
+                    An Arduino-based smart water tank management system that
+                    automates water level monitoring and pump control. An
+                    ultrasonic sensor continuously measures the water level. The
+                    pump switches ON when the tank level is low and OFF when the
+                    tank reaches its maximum level.
+                  </p>
+                  <p>
+                    This helps prevent water overflow, reduces water wastage,
+                    and removes the need for manual monitoring. Real-time
+                    feedback comes from an LCD display and LED indicators, so
+                    users can easily see the current water level and pump
+                    status.
+                  </p>
+
+                  <!-- How it works -->
+                  <p class="mini-title">How it works</p>
+                  <ol class="steps">
+                    <li><b>Measure</b> HC-SR04 reads the water level</li>
+                    <li><b>Decide</b> Arduino UNO compares it with low and max levels</li>
+                    <li><b>Control</b> Relay switches the pump ON or OFF</li>
+                    <li><b>Display</b> LCD and LEDs show level and pump status</li>
+                  </ol>
+                </div>
+
+                <div>
+                  <p class="mini-title">Key components &amp; technologies</p>
+                  <ul class="feature-list">
+                    <li>Arduino UNO</li>
+                    <li>HC-SR04 Ultrasonic Sensor</li>
+                    <li>Relay Module</li>
+                    <li>16&times;2 LCD Display</li>
+                    <li>LED Indicators</li>
+                    <li>Jumper Wires &amp; Breadboard</li>
+                    <li>Tinkercad (circuit simulation &amp; prototyping)</li>
+                  </ul>
+
+                  <p class="mini-title">Skills strengthened</p>
+                  <div class="chips small">
+                    <span class="tech">Embedded Systems</span
+                    ><span class="tech">Arduino Programming</span
+                    ><span class="tech">Sensor Integration</span
+                    ><span class="tech">Circuit Design</span
+                    ><span class="tech">Hardware Debugging</span
+                    ><span class="tech">Rapid Prototyping</span
+                    ><span class="tech">Collaborative Problem-Solving</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-links">
+                <a
+                  href="https://www.linkedin.com/posts/nadun-charuka_arduino-embeddedsystems-iot-ugcPost-7477413486193700864-6Adp/"
+                  class="btn btn-small btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-linkedin-in"></i> View LinkedIn Post</a
+                >
+              </div>
+            </article>
+
+            <!-- ---------- Project: Smart White Cane ---------- -->
             <article class="project-card reveal">
               <div class="project-top">
                 <div class="project-icon">
@@ -628,17 +860,10 @@
                   data-label="GitHub repository"
                   ><i class="fa-brands fa-github"></i> GitHub</a
                 >
-                <a
-                  href="#"
-                  class="btn btn-small btn-ghost placeholder-link"
-                  data-label="Live demo"
-                  ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
-                  Demo</a
-                >
               </div>
             </article>
 
-            <!-- ---------- Project 2 ---------- -->
+            <!-- ---------- Project: Robotic Car ---------- -->
             <article class="project-card reveal">
               <div class="project-top">
                 <div class="project-icon">
@@ -655,9 +880,7 @@
               <ul class="feature-list">
                 <li>Line-following functionality</li>
                 <li>Obstacle detection and avoidance</li>
-                <li>
-                  Three front ultrasonic sensors plus one on a servo motor
-                </li>
+                <li>Three front ultrasonic sensors plus one on a servo motor</li>
                 <li>
                   Fixed left and right ultrasonic sensors, and rear obstacle
                   detection
@@ -691,7 +914,7 @@
               </div>
             </article>
 
-            <!-- ---------- Project 3 ---------- -->
+            <!-- ---------- Project: Personal Cloud ---------- -->
             <article class="project-card reveal">
               <div class="project-top">
                 <div class="project-icon">
@@ -733,6 +956,16 @@
               </div>
             </article>
           </div>
+
+          <p class="center reveal">
+            <a
+              href="https://github.com/naduncharuka/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+              ><i class="fa-brands fa-github"></i> More on my GitHub</a
+            >
+          </p>
         </div>
       </section>
 
@@ -814,8 +1047,8 @@
               <i class="fa-solid fa-book-open-reader"></i>
               <h3>Technical Learning</h3>
               <p>
-                Actively exploring electronics, robotics, Linux systems, cloud
-                infrastructure, and engineering technologies.
+                Actively exploring coding, Linux systems, cloud infrastructure,
+                electronics and engineering technologies.
               </p>
             </article>
             <article class="lead-card lead-empty reveal">
@@ -842,7 +1075,7 @@
             <span class="section-kicker">08</span>
             <h2>Contact</h2>
             <p class="section-sub">
-              Open to internships, industrial training and graduate
+              Open to internships, industrial training and developer
               opportunities
             </p>
           </div>
@@ -851,21 +1084,20 @@
             <div class="contact-info reveal">
               <h3>Let's connect</h3>
               <p>
-                Whether it is an internship, industrial training placement or an
+                Whether it is an internship, a web or coding project, or an
                 engineering conversation, I would be glad to hear from you.
               </p>
 
               <ul class="contact-list">
-                <!-- EDIT: replace the placeholder text and links with your real details -->
                 <li>
                   <i class="fa-solid fa-envelope"></i>
-                  <span class="editable" id="contact-email"
-                    >naduncharuka20@gmail.com</span
+                  <a href="mailto:naduncharuka20@gmail.com" id="contact-email"
+                    >naduncharuka20@gmail.com</a
                   >
                 </li>
                 <li>
                   <i class="fa-solid fa-phone"></i>
-                  <span class="editable">0767834166</span>
+                  <a href="tel:+94767834166">0767834166</a>
                 </li>
                 <li>
                   <i class="fa-solid fa-location-dot"></i> Colombo, Sri Lanka
@@ -874,18 +1106,42 @@
                   <i class="fa-brands fa-linkedin"></i>
                   <a
                     href="https://www.linkedin.com/in/nadun-charuka"
-                    class="placeholder-link"
-                    data-label="LinkedIn"
-                    >www.linkedin.com/in/nadun-charuka</a
+                    target="_blank"
+                    rel="noopener"
+                    >linkedin.com/in/nadun-charuka</a
                   >
                 </li>
                 <li>
                   <i class="fa-brands fa-github"></i>
                   <a
                     href="https://github.com/naduncharuka"
-                    class="placeholder-link"
-                    data-label="GitHub"
-                    >https://github.com/naduncharuka</a
+                    target="_blank"
+                    rel="noopener"
+                    >github.com/naduncharuka</a
+                  >
+                </li>
+                <li>
+                  <i class="fa-brands fa-instagram"></i>
+                  <a
+                    href="https://www.instagram.com/nadun_charuka/"
+                    target="_blank"
+                    rel="noopener"
+                    >@nadun_charuka</a
+                  >
+                </li>
+                <li>
+                  <i class="fa-brands fa-facebook"></i>
+                  <a
+                    href="https://www.facebook.com/Nadun.Charuka.Perera"
+                    target="_blank"
+                    rel="noopener"
+                    >Nadun.Charuka.Perera</a
+                  >
+                </li>
+                <li>
+                  <i class="fa-brands fa-telegram"></i>
+                  <a href="https://t.me/Naddagg" target="_blank" rel="noopener"
+                    >@Naddagg</a
                   >
                 </li>
               </ul>
@@ -957,12 +1213,20 @@
     <!-- ===================== FOOTER ===================== -->
     <footer class="footer">
       <div class="container footer-inner">
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nadun-charuka/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/naduncharuka/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.instagram.com/nadun_charuka/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/Nadun.Charuka.Perera" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://t.me/Naddagg" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        </div>
         <p>
           &copy; <span id="year">2026</span> Nadun Charuka Perera. All rights
           reserved.
         </p>
         <p class="footer-sub">
-          Engineering Technology &middot; Wayamba University of Sri Lanka
+          Developer &middot; Web Designer &middot; Engineering Technology
+          Undergraduate
         </p>
       </div>
     </footer>

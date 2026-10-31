@@ -153,10 +153,14 @@ p { margin: 0 0 1em; }
 .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--text); font-family: var(--font-head); font-weight: 700; }
 .brand:hover { text-decoration: none; }
 .brand-mark {
-  width: 38px; height: 38px; display: grid; place-items: center;
-  border-radius: 10px; background: linear-gradient(135deg, var(--blue-500), var(--sky-300));
+  position: relative; overflow: hidden;
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: 50%; background: linear-gradient(135deg, var(--blue-500), var(--sky-300));
   color: var(--navy-900); font-size: 0.9rem;
+  box-shadow: 0 0 0 2px var(--accent-soft);
 }
+/* Your photo sits on top of the initials; it is hidden by script.js if the file is missing */
+.brand-mark img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
 .nav-menu ul { display: flex; gap: 0.25rem; }
 .nav-link {
@@ -327,9 +331,10 @@ p { margin: 0 0 1em; }
   background: linear-gradient(135deg, var(--navy-600), var(--navy-700));
   display: grid; place-items: center;
 }
-.cert-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+/* Badge pictures keep their shape (contain) so nothing is cropped */
+.cert-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 0.8rem; z-index: 1; }
 .cert-fallback { text-align: center; color: var(--sky-300); display: grid; gap: 0.5rem; }
-.cert-fallback i { font-size: 2.6rem; }
+.cert-fallback i { font-size: 3.4rem; filter: drop-shadow(0 6px 14px rgba(79, 155, 255, 0.45)); }
 .cert-fallback span { font-size: 0.8rem; opacity: 0.85; }
 .cert-body { padding: 1.2rem 1.3rem 1.4rem; }
 .cert-body h3 { font-size: 1.05rem; }
@@ -451,6 +456,118 @@ p { margin: 0 0 1em; }
 }
 .toast.show { transform: translate(-50%, 0); opacity: 1; }
 
+/* ---------- 7b. REVISION ADDITIONS ---------- */
+
+/* Hero: developer headline + typing line */
+.hero-title i { margin-right: 0.4rem; }
+.hero-typed {
+  font-family: "Consolas", "SFMono-Regular", Menlo, monospace; font-size: 1.05rem;
+  color: var(--text); margin: 1rem 0 0.4rem;
+  padding: 0.5rem 0.9rem; display: inline-block; border-radius: var(--radius-sm);
+  background: var(--accent-soft); border: 1px solid var(--border);
+}
+.hero-typed .prompt { color: var(--accent); margin-right: 0.3rem; }
+.typed-text { color: var(--accent); font-weight: 600; }
+.caret { display: inline-block; width: 8px; height: 1.1em; margin-left: 2px; vertical-align: text-bottom; background: var(--accent); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.chip-4 { top: 14%; right: -2%; animation-delay: 0.6s; }
+.social-row { flex-wrap: wrap; }
+
+/* About: stats and "what I do" */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 3rem 0 2rem; }
+.stat {
+  text-align: center; padding: 1.2rem 0.5rem; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.stat-num { display: block; font-family: var(--font-head); font-size: 2.2rem; line-height: 1.1; color: var(--accent); }
+.stat span { font-size: 0.85rem; color: var(--text-muted); }
+
+.do-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+.do-card {
+  padding: 1.5rem; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.do-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.do-card > i { font-size: 1.5rem; color: var(--accent); margin-bottom: 0.8rem; }
+.do-card h3 { font-size: 1.05rem; }
+.do-card p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+/* Education */
+.edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.edu-card {
+  padding: 2rem; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 22px; box-shadow: var(--shadow);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.edu-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.edu-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.4rem; }
+.edu-top .badge { margin: 0; }
+.edu-card h3 { font-size: 1.4rem; }
+.edu-org { color: var(--accent); font-weight: 600; margin-bottom: 0.8rem; }
+.edu-meta { color: var(--text-muted); font-size: 0.93rem; margin-bottom: 0.3rem; }
+.edu-meta i { width: 18px; color: var(--accent); }
+.edu-note { color: var(--text-muted); font-size: 0.88rem; margin: 0.9rem 0 0; }
+
+/* Logo box: image over initials; initials show if the image file is missing */
+.edu-logo {
+  position: relative; overflow: hidden; display: grid; place-items: center; flex: none;
+  background: #fff; border: 1px solid var(--border); color: var(--navy-700);
+  font-family: var(--font-head); font-weight: 700;
+}
+.edu-logo.large { width: 88px; height: 88px; border-radius: 20px; font-size: 1.1rem; }
+.edu-logo.small { width: 46px; height: 46px; border-radius: 12px; font-size: 0.75rem; }
+.edu-logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 8%; background: #fff; }
+
+.school-card {
+  margin-top: 1.5rem; padding: 0.6rem 1.5rem; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 22px;
+}
+.school-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); padding: 1rem 0 0.4rem; margin: 0; }
+.school-title i { color: var(--accent); margin-right: 0.4rem; }
+.school-row { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 0; border-top: 1px solid var(--border); }
+.school-title + .school-row { border-top: 0; }
+.school-info { flex: 1; min-width: 0; display: grid; }
+.school-info strong { font-family: var(--font-head); font-size: 0.98rem; }
+.school-info span { color: var(--text-muted); font-size: 0.86rem; }
+.school-years { color: var(--text-muted); font-size: 0.86rem; white-space: nowrap; }
+
+/* Certificates */
+.cert-body { display: flex; flex-direction: column; gap: 0.1rem; }
+.cert-desc { color: var(--text-muted); font-size: 0.86rem; margin: 0.4rem 0 0.6rem; }
+.cert-body .chips { margin: 0.5rem 0 0.9rem; }
+.cert-body .btn { align-self: flex-start; margin-top: auto; }
+.cert-body .cert-date + .btn { margin-top: 0.6rem; }
+.cert-image { aspect-ratio: 16 / 9; }
+
+/* Skills: icon inside chip */
+.skill i { color: var(--accent); }
+.skill:hover i { color: var(--btn-text); }
+
+/* Projects: featured wide card */
+.project-featured { grid-column: 1 / -1; }
+.project-featured h3 { font-size: 1.5rem; }
+.featured-cols { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; margin-top: 0.4rem; }
+.steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; counter-reset: step; margin-bottom: 0.5rem; }
+.steps li {
+  counter-increment: step; position: relative; padding: 0.7rem 0.9rem 0.7rem 2.6rem;
+  background: var(--accent-soft); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  font-size: 0.85rem; color: var(--text-muted);
+}
+.steps li::before {
+  content: counter(step); position: absolute; left: 0.7rem; top: 0.7rem; width: 1.4rem; height: 1.4rem;
+  display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--btn-text);
+  font-size: 0.75rem; font-weight: 700;
+}
+.steps li b { display: block; color: var(--text); font-family: var(--font-head); }
+
+/* Footer social icons */
+.footer-social { display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 0.8rem; }
+.footer-social a {
+  width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%;
+  border: 1px solid rgba(142, 197, 255, 0.25); color: #cfe0f5; transition: all 0.2s ease;
+}
+.footer-social a:hover { background: var(--blue-500); color: #fff; transform: translateY(-3px); text-decoration: none; }
+
 /* ---------- 8. ANIMATIONS ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
@@ -488,7 +605,17 @@ p { margin: 0 0 1em; }
   .nav-link { padding: 0.75rem 1rem; font-size: 1rem; border-radius: var(--radius-sm); }
 }
 
+@media (max-width: 900px) {
+  .edu-grid, .featured-cols { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 600px) {
+  .steps { grid-template-columns: 1fr; }
+  .school-row { flex-wrap: wrap; }
+  .school-years { width: 100%; padding-left: 62px; margin-top: -0.6rem; }
+  .edu-card { padding: 1.4rem; }
+  .hero-typed { font-size: 0.92rem; }
   .section { padding: 4rem 0; }
   .brand-name { display: none; }
   .timeline { padding-left: 1.6rem; }

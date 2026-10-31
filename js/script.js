@@ -189,7 +189,7 @@
   /* ---------- 9. CONTACT FORM ----------
      Validates the fields, then opens the visitor's email app with the message filled in.
      Set RECIPIENT to your email address to make this work. */
-  var RECIPIENT = ""; // EDIT: e.g. "yourname@example.com"
+  var RECIPIENT = "naduncharuka20@gmail.com"; // EDIT: change if you want messages sent elsewhere
 
   var form = $("#contact-form");
   var statusEl = $("#form-status");
@@ -249,11 +249,81 @@
     photo.addEventListener("error", function () { frame.classList.add("no-photo"); });
     if (photo.complete && photo.naturalWidth === 0) frame.classList.add("no-photo");
   }
-  $$(".cert-img").forEach(function (img) {
+  // Header logo photo, education logos and certificate badges all use class "fb-img":
+  // if the image file is missing, hide it so the initials / icon underneath show.
+  $$(".fb-img").forEach(function (img) {
     function hide() { img.style.display = "none"; }
     img.addEventListener("error", hide);
     if (img.complete && img.naturalWidth === 0) hide();
   });
+
+  /* ---------- 11. TYPING LINE IN THE HERO ----------
+     EDIT: change the phrases below to whatever you like. */
+  var TYPED_PHRASES = [
+    "coding",
+    "building websites",
+    "writing Python",
+    "working with Linux & Docker",
+    "tinkering with Arduino"
+  ];
+  var typedEl = $("#typed");
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (typedEl && !reduceMotion) {
+    var phraseIndex = 0, charIndex = 0, deleting = false;
+    (function tick() {
+      var phrase = TYPED_PHRASES[phraseIndex];
+      charIndex += deleting ? -1 : 1;
+      typedEl.textContent = phrase.substring(0, charIndex);
+
+      var delay = deleting ? 40 : 85;
+      if (!deleting && charIndex === phrase.length) { deleting = true; delay = 1500; }
+      else if (deleting && charIndex === 0) {
+        deleting = false;
+        phraseIndex = (phraseIndex + 1) % TYPED_PHRASES.length;
+        delay = 400;
+      }
+      setTimeout(tick, delay);
+    })();
+  }
+
+  /* ---------- 12. AUTOMATIC COUNTERS ----------
+     Each .stat-num counts items on the page, so the numbers update
+     by themselves when you add a certificate, project or skill. */
+  function countItems(el) {
+    var nodes = $$(el.getAttribute("data-count-of"));
+    if (el.getAttribute("data-unique") === "true") {
+      var seen = {};
+      nodes.forEach(function (n) { seen[n.textContent.trim().toLowerCase()] = true; });
+      return Object.keys(seen).length;
+    }
+    return nodes.length;
+  }
+
+  function animateCount(el) {
+    var target = countItems(el);
+    if (reduceMotion) { el.textContent = target; return; }
+    var start = null, duration = 1200;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(target * p);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var statEls = $$(".stat-num");
+  if ("IntersectionObserver" in window) {
+    var statObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { animateCount(entry.target); statObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.4 });
+    statEls.forEach(function (el) { statObserver.observe(el); });
+  } else {
+    statEls.forEach(function (el) { el.textContent = countItems(el); });
+  }
 
   /* ---------- Footer year ---------- */
   var yearEl = $("#year");
