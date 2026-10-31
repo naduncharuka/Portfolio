@@ -1417,10 +1417,10 @@ p {
   padding: 8%;
   background: #fff;
 }
-.mahinda-logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
+.edu-logo.small.mahinda-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
   background: #104f9e;
 }
 .mahinda-logo img {
@@ -1862,7 +1862,7 @@ p {
     margin-top: -0.6rem;
   }
   .mahinda-logo ~ .school-years {
-    padding-left: 136px;
+    padding-left: 104px;
   }
   .edu-card {
     padding: 1.4rem;
