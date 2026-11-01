@@ -340,7 +340,7 @@ p {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-h) + 3rem) 0 4rem;
+  padding: calc(var(--nav-h) + 1.6rem) 0 4rem;
   overflow: hidden;
   background:
     radial-gradient(
