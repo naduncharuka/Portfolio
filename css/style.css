@@ -75,7 +75,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-h);
+  scroll-padding-top: calc(var(--nav-h) - 2rem);
 }
 
 body {
@@ -235,12 +235,6 @@ p {
 }
 
 /* Placeholder text the owner should replace */
-.editable {
-  font-style: italic;
-  color: var(--text-muted);
-  border-bottom: 1px dashed var(--border);
-}
-
 /* ---------- 3. NAVIGATION ---------- */
 .navbar {
   position: fixed;
@@ -269,6 +263,7 @@ p {
 
 .brand {
   display: flex;
+  flex: none;
   align-items: center;
   gap: 0.6rem;
   color: var(--text);
@@ -327,6 +322,7 @@ p {
 
 .nav-actions {
   display: flex;
+  flex: none;
   align-items: center;
   gap: 0.5rem;
 }
@@ -538,6 +534,11 @@ p {
   box-shadow: var(--shadow);
   animation: float 5s ease-in-out infinite;
 }
+.chip-4 {
+  top: 24%;
+  right: 0;
+  animation-delay: 0.6s;
+}
 .float-chip i {
   color: var(--accent);
 }
@@ -547,7 +548,7 @@ p {
 }
 .chip-2 {
   top: 48%;
-  right: -4%;
+  right: 0;
   animation-delay: 1.2s;
 }
 .chip-3 {
@@ -764,11 +765,14 @@ p {
 
 /* ---------- 6. CERTS, SKILLS, PROJECTS, LEADERSHIP ---------- */
 .cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 .cert-card {
+  flex: 0 1 calc((100% - 3 * 1.5rem) / 4);
+  min-width: 250px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -830,31 +834,15 @@ p {
   color: var(--accent);
   width: 18px;
 }
-.cert-empty {
-  display: grid;
-  place-items: center;
-  text-align: center;
-  border-style: dashed;
-  background: transparent;
-  box-shadow: none;
-  min-height: 260px;
+.brand-icon {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  display: inline-block;
+  vertical-align: -0.15em;
 }
-.cert-empty-inner {
-  padding: 1.5rem;
-  color: var(--text-muted);
-}
-.cert-empty-inner i {
-  font-size: 1.6rem;
-  color: var(--accent);
-  margin-bottom: 0.6rem;
-}
-.cert-empty-inner h3 {
-  font-size: 1.05rem;
-  color: var(--text);
-}
-.cert-empty-inner p {
-  font-size: 0.88rem;
-  margin: 0;
+.cert-org .brand-icon {
+  margin-right: 0.45rem;
 }
 
 /* Skills */
@@ -1034,11 +1022,14 @@ p {
 
 /* Leadership */
 .lead-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 .lead-card {
+  flex: 0 1 calc((100% - 3rem) / 3);
+  min-width: 250px;
   padding: 1.6rem;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -1065,12 +1056,6 @@ p {
   font-size: 0.92rem;
   margin: 0;
 }
-.lead-empty {
-  border-style: dashed;
-  background: transparent;
-  box-shadow: none;
-}
-
 /* ---------- 7. CONTACT, FOOTER, FLOATING UI ---------- */
 .contact-grid {
   display: grid;
@@ -1522,10 +1507,12 @@ p {
   margin-top: 0.4rem;
 }
 .steps {
+  list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.7rem;
   counter-reset: step;
+  padding: 0;
   margin-bottom: 0.5rem;
 }
 .steps li {
@@ -1802,7 +1789,7 @@ p {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .menu-btn {
     display: grid;
   }
@@ -1898,6 +1885,24 @@ p {
     grid-template-columns: 1fr;
   }
   .float-chip {
-    display: none;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.65rem;
+    gap: 0.35rem;
+  }
+  .chip-1 {
+    top: 2%;
+    left: 0;
+  }
+  .chip-4 {
+    top: 10%;
+    right: 0;
+  }
+  .chip-2 {
+    top: 50%;
+    right: 0;
+  }
+  .chip-3 {
+    bottom: 2%;
+    left: 0;
   }
 }
